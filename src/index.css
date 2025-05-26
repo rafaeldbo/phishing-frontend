@@ -1,0 +1,166 @@
+:root {
+  --primary-color: #0077FF;
+  --high-suspicios-color: #FF3D00;
+  --moderate-suspicios-color: #FF6D00;
+  --low-suspicios-color: #FFD700;
+  --no-suspicios-color: #00C853;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  background-color: #0F0F0F;
+}
+
+input[type="submit"], input[type="button"], button, .button{
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+input[type="submit"]:active, input[type="button"]:active, button:active, .button:active {
+  transform: scale(0.9);
+  box-shadow: 0 0.2rem 0.2rem rgba(0, 0, 0, 0.3)
+}
+
+@keyframes rotateCircle {
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
+  }
+}
+
+.loading-circle {
+  width: 1.5rem;
+  height: 1.5rem; 
+  border-radius: 50%;
+  outline: 0.2rem solid;
+  outline-color: var(--primary-color);
+  outline-offset: -0.2rem;
+  animation: rotateCircle 0.6s linear infinite;
+  clip-path: polygon(50% 50%, 50% 0%, 100% 0%, 100% 50%, 50% 50%);
+}
+
+h1, h2, h3 {
+  text-align: center;
+  font-weight: bold;
+}
+
+h1 {
+  color: var(--primary-color);
+  font-size: 32pt;
+}
+
+h2 {
+  font-size: 24pt;
+}
+
+h3 {
+  font-size: 20pt;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  background: white;
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+  width: min-content;
+  margin: 1rem auto;
+}
+
+.input-url {
+  padding: 1rem 0;
+  width: 80vw;
+  border: 0.1rem solid #ccc;
+  border-radius: 0.5rem;
+
+  text-align: center;
+}
+.input-url::placeholder {
+  text-align: center;
+}
+
+td {
+  text-align: center;
+  vertical-align: middle;
+}
+
+
+.suspicious-tag {
+  color: white;
+  margin: 0 auto;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  text-align: center;
+  text-wrap: nowrap;
+}
+
+button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--primary-color);
+  font-weight: bold;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+
+}
+.submit-button {
+  padding: 1rem 0;
+  width: 80vw;
+  font-size: 12pt;
+}
+
+.export-button {
+  padding: 0.5rem 0;
+
+  width: 10rem;
+  font-size: 10pt;
+}
+
+.submit-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.result-table {
+  width: 80vw;
+}
+
+th, td {
+  border: 0.1rem solid #ddd;
+  padding: 1rem;
+}
+
+th {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.history h2 {
+  color: var(--primary-color);
+}
+.history-table, .history {
+  width: 80vw;
+}
+
+.high-bg {background-color: var(--high-suspicios-color);}
+.moderate-bg {background-color: var(--moderate-suspicios-color);}
+.low-bg {background-color: var(--low-suspicios-color);}
+.no-bg {background-color: var(--no-suspicios-color);}
+
+.high-cl {color: var(--high-suspicios-color);}
+.moderate-cl {color: var(--moderate-suspicios-color);}
+.low-cl {color: var(--low-suspicios-color);}
+.no-cl {color: var(--no-suspicios-color);}
