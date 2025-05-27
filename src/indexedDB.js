@@ -16,9 +16,9 @@ export const createAnalysis = async (domain, data) => {
   const store = transaction.objectStore("analysis");
 
   try {
-    await store.add({ domain, ...data }); 
+    await store.put({ domain, ...data }); // 'put' adiciona ou substitui automaticamente
   } catch (error) {
-    console.error("Erro ao criar registro no IndexedDB:", error);
+    console.error("Erro ao salvar registro no IndexedDB:", error);
   }
 };
 
